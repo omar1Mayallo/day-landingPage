@@ -1,10 +1,31 @@
-import "./App.css";
-
+//Layout
+import Header from "./Layout/Header";
+import Footer from "./Layout/Footer";
+//Sections
+import Home from "./sections/Home";
+import About from "./sections/About";
+import Services from "./sections/Services";
+import Portfolio from "./sections/Portfolio";
+import Pricing from "./sections/Pricing";
+import Team from "./sections/Team";
+import Contact from "./sections/Contact";
+//Styles
+import "./App.scss";
 function App() {
   return (
-    <div>
-      <h1>Hello Design 2</h1>
-    </div>
+    <>
+      <Header />
+      <main>
+        <Home />
+        <About />
+        <Services />
+        <Portfolio />
+        <Pricing />
+        <Team />
+        <Contact />
+      </main>
+      <Footer />
+    </>
   );
 }
 
