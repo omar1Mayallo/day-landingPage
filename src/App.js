@@ -1,30 +1,19 @@
-//Layout
-import Header from "./Layout/Header";
-import Footer from "./Layout/Footer";
-//Sections
-import Home from "./sections/Home";
-import About from "./sections/About";
-import Services from "./sections/Services";
-import Portfolio from "./sections/Portfolio";
-import Pricing from "./sections/Pricing";
-import Team from "./sections/Team";
-import Contact from "./sections/Contact";
+import {useContext} from "react";
+import Landing from "./pages/Landing";
 //Styles
-import "./App.scss";
+import ThemeContext from "./contexts/ThemeContext";
+import {ThemeProvider} from "styled-components";
+import {GlobalStyles} from "./styles/GlobalStyles";
+import "./App.css";
+
 function App() {
+  const {theme} = useContext(ThemeContext);
   return (
     <>
-      <Header />
-      <main>
-        <Home />
-        <About />
-        <Services />
-        <Portfolio />
-        <Pricing />
-        <Team />
-        <Contact />
-      </main>
-      <Footer />
+      <ThemeProvider theme={{theme}}>
+        <GlobalStyles />
+        <Landing />
+      </ThemeProvider>
     </>
   );
 }
